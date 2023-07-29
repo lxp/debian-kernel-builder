@@ -19,6 +19,7 @@ jobs:
 
       - name: Update system
         run: |
+          sed 's/^deb /deb-src /' /etc/apt/sources.list >>/etc/apt/sources.list
           apt-get update
           apt-get full-upgrade -y
 
